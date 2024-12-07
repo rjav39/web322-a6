@@ -1,0 +1,12 @@
+<form method="POST" action="/login">
+    <input type="text" name="userName" placeholder="User Name" value="<%= userName %>" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  
+  <% if (errorMessage) { %>
+    <div class="alert alert-error">
+      <span><%= errorMessage %></span>
+    </div>
+  <% } %>
+  
