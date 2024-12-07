@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
+    "bcryptjs": "^2.4.3",
     "client-sessions": "^0.8.0",
     "daisyui": "^4.12.13",
     "dotenv": "^16.4.5",

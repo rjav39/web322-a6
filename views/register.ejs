@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
     <div class="max-w-lg mx-auto p-4 bg-white shadow-md mt-16 rounded-lg">
-        <h1 class="text-3xl font-bold text-center mb-6">Login</h1>
+        <h1 class="text-3xl font-bold text-center mb-6">Register</h1>
+
+        <!-- Success Message -->
+        <% if (successMessage) { %>
+            <div class="alert alert-success bg-green-100 p-3 mb-4 rounded-lg">
+                <span><%= successMessage %></span>
+            </div>
+        <% } %>
 
         <!-- Error Message -->
         <% if (errorMessage) { %>
@@ -17,11 +24,16 @@
             </div>
         <% } %>
 
-        <!-- Login Form -->
-        <form action="/login" method="POST">
+        <!-- Registration Form -->
+        <form action="/register" method="POST">
             <div class="mb-4">
                 <label for="userName" class="block text-lg font-medium">User Name</label>
                 <input type="text" id="userName" name="userName" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Enter User Name" value="<%= userName %>" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-lg font-medium">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Enter Email Address" required>
             </div>
 
             <div class="mb-4">
@@ -29,12 +41,17 @@
                 <input type="password" id="password" name="password" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Enter Password" required>
             </div>
 
-            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Login</button>
+            <div class="mb-4">
+                <label for="password2" class="block text-lg font-medium">Confirm Password</label>
+                <input type="password" id="password2" name="password2" class="w-full p-2 border border-gray-300 rounded-md" placeholder="Confirm Password" required>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Register</button>
         </form>
 
-        <!-- Link to register if user doesn't have an account -->
+        <!-- Link to login if user already has an account -->
         <div class="text-center mt-4">
-            <p>Don't have an account? <a href="/register" class="text-blue-500">Register here</a></p>
+            <p>Already have an account? <a href="/login" class="text-blue-500">Login here</a></p>
         </div>
     </div>
 </body>
