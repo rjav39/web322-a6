@@ -5,7 +5,6 @@ require('dotenv').config();
 
 let User;
 
-
 const userSchema = new mongoose.Schema({
     userName: { type: String, unique: true },
     password: String,
